@@ -12,15 +12,17 @@ The data is stored locally in a Postgres database. I picked this over storing it
 
 The database itself is divided into two schemas, Courses and Scores. Courses contains four different tables, 'course_name', 'course_version', 'course_info', and 'hole_info'. This schema contains all information about each course that I played. 
 
-[![courses_schema](https://github.com/CBJohnson30/Golf-Scores/blob/main/Images/courses_schema.png)]
+![courses_schema](https://github.com/CBJohnson30/Golf-Scores/blob/main/Images/courses_schema.png)
 
 The other schema, 'Scores' contains all information around each round I played and data about each hole in every round. These tables are called 'round_info' and 'hole_scores'.
  
-[scores_schema](https://github.com/CBJohnson30/Golf-Scores/blob/main/Images/scores_schema.png)
+![scores_schema](https://github.com/CBJohnson30/Golf-Scores/blob/main/Images/scores_schema.png)
 
 ## Data Entry
 
-All data entry is done through jupyter notebooks and the Ipywidgets package. Ipywidgets lets me build a visual front end to easily enter the needed data while also saving it as variables to use later on in the notebook. This package also lets me enter data in multiple ways; by dates, strings, integers, or floats. This package lets me do everything I need when it comes to data entry. Below is a screen of what date entry looks for one hole. 
+All data entry is done through jupyter notebooks and the Ipywidgets package. Ipywidgets lets me build a visual front end to easily enter the needed data while also saving it as variables to use later on in the notebook. This package also lets me enter data in multiple ways; by dates, strings, integers, or floats. This package lets me do everything I need when it comes to data entry. Below is a screen of what date entry looks for one hole.
+
+![hole_score](https://github.com/CBJohnson30/Golf-Scores/blob/main/Images/hole_score.png)
 
 ## Analysis
 
