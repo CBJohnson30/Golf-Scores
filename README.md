@@ -27,7 +27,7 @@ All data entry is done through jupyter notebooks and the Ipywidgets package. Ipy
 ## Analysis
 
 The next step of this project will be an analysis of my golf stats. I need to play a few courses a couple of more times to be able to gather insight on each course specificity but that will come with time. These are a few questions I am going to start off answering but I am hoping to add to this list as I continue with this project:
-    - What course do I hit the most fairways/greens on?
-    - Are there any patterns in shooting at or below my current handicap? 
-    - What distance of course/hole per par do play best?
-    - What side do I miss most of my fairways/greens and is this course-specific? 
+- What course do I hit the most fairways/greens on?
+- Are there any patterns in shooting at or below my current handicap? 
+- What distance of course/hole per par do play best?
+- What side do I miss most of my fairways/greens and is this course-specific? 
