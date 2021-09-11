@@ -10,7 +10,7 @@ This project started with me wanting to analyze my golf rounds. My first thought
 
 The data is stored locally in a Postgres database. I picked this over storing it in the cloud because of the analysis component in the future(I want to test out a few different analysis applications and their tree trials do not include cloud connection access). This also allowed me to easily update and experiment with the database and tweak small things throughout of coding process. Also, it does not hurt that I do not have to pay for the cloud space as well. 
 
-The database itself is divided into two schemas, Courses and Scores. Courses contains four different tables, 'course_name', 'course_version', 'course_info', and 'hole_info'. This schema contains all information about each course that I played. 
+The database itself is divided into two schemas, Courses and Scores. Courses contains four different tables, 'course_name', 'course_version', 'course_tee', and 'hole_info'. This schema contains all information about each course that I played. 
 
 ![courses_schema](https://github.com/CBJohnson30/Golf-Scores/blob/main/Images/courses_schema.png)
 
