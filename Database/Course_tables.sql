@@ -1,42 +1,6 @@
 --- Creating courses tables ---
-
--- course_info table is used to store course/tee infromation --
-Create TABLE "Courses".course_info (
-	course_info_id smallserial primary key,
-	course_id varchar(5),
-	par varchar(3),
-	tee varchar(25),
-	total_distance int,
-	f9_distance int,
-	b9_distance int,
-	rating numeric,
-	slope int,
-	course_version_id varchar(5)
-);
-
--- hole_info contains infromation about each whole by course/course_id/tee --
-Create TABLE "Courses".hole_info (
-	hole_info_id smallserial primary key,
-	course_id varchar(5),
-	course_version_id varchar(5),
-	tee varchar (25),
-	hole varchar(5),
-	par varchar(5),
-	distance int,
-	handicap int
-);
-
--- course_version is needed in case a course ever updates its layout or rating -- 
-Create Table "Courses".course_version (
-	course_version_id smallserial primary key,
-	course_id varchar(5),
-	reason_added varchar(50),
-	date_added date
-);
-
--- course_name stores meta-data and background infromation about each course. 
 Create Table "Courses".course_name (
-	course_id smallserial primary key,
+	course_id smallserial PRIMARY KEY,
 	course_name varchar(50),
 	city varchar(50),
 	state varchar(25),
@@ -44,5 +8,47 @@ Create Table "Courses".course_name (
 	address varchar(100),
 	date_added date
 );
+
+Create Table "Courses".course_version (
+	course_version_id smallserial PRIMARY KEY,
+	course_id  int,
+	reason_added varchar(50),
+	date_added date,
+	CONSTRAINT fk_Version_Name FOREIGN KEY (course_id) REFERENCES "Courses".course_name(course_id)
+);
+
+Create TABLE "Courses".course_tee (
+	course_tee_id smallserial PRIMARY KEY,
+	course_id int,
+	total_par int,
+	tee varchar(25),
+	total_distance int,
+	f9_distance int,
+	b9_distance int,
+	rating numeric,
+	slope int,
+	course_version_id int,
+	CONSTRAINT fk_Tee_Name FOREIGN KEY (course_id) REFERENCES "Courses".course_name(course_id),
+	CONSTRAINT fk_Tee_Version FOREIGN KEY (course_version_id) REFERENCES "Courses".course_version(course_version_id)
+);
+
+Create TABLE "Courses".hole_info (
+	hole_info_id smallserial PRIMARY KEY,
+	course_id int,
+	course_version_id int,
+	course_tee_id int,
+	tee varchar(25),
+	hole int,
+	par int,
+	distance int,
+	handicap int,
+	CONSTRAINT fk_Hole_Name FOREIGN KEY (course_id) REFERENCES "Courses".course_name(course_id),
+	CONSTRAINT fk_Hole_Version FOREIGN KEY (course_version_id) REFERENCES "Courses".course_version(course_version_id),
+	CONSTRAINT fk_Hole_Tee FOREIGN KEY (course_tee_id) REFERENCES "Courses".course_tee(course_tee_id)
+);
+
+
+
+
 
 
